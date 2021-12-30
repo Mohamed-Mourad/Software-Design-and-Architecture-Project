@@ -241,10 +241,8 @@ public class Main {
 	}
        
 }    */
-	
-		 Driver d = new Driver();
-		 d.AddFavArea("haram");
-		 d.AddFavArea("October");
+	 
+		/* d.AddFavArea("October");
 		 d.AddFavArea("dod");
 		 Rider_Entity riderE=new Rider_Entity();
 		 Rider_Entity riderE2=new Rider_Entity();
@@ -263,6 +261,27 @@ public class Main {
 		 Ride r3= new Ride(riderE3,"3" , "3");
 		 System.out.println(r.getID());
 		 System.out.println(r2.getID());
-		 System.out.println(r3.getID());
+		 System.out.println(r3.getID());*/
+		
+		 Driver d = new Driver();
+		 
+		 d.AddFavArea("haram");
+		 Notifications n = new Notifications();
+		 System.out.println(d.getFavAreas());
+		 Rider rider=new Rider();
+		 Rider_Entity riderE=new Rider_Entity("mado","phonenum","pass","email");
+	
+		 Ride ride = new Ride(riderE,"haram","bola2");
+		 
+		 rider.requestRide(ride,"haram","bola2");
+		
+		
+		System.out.println(d.SeeNotifications(n));
+		// n.addRequested(ride);
+		
+		 d.Offer(d,ride,40.5);
+		// n.addOffer(offer);
+		 System.out.println( rider.ListOffer(ride));
+		 
 }
 }

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
 public class Fav_Areas {
+	
+	
 protected String Area;
 protected ArrayList<String> FavAreas = new ArrayList<String>();
 

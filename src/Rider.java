@@ -1,26 +1,49 @@
 import java.util.ArrayList;
 
-public class Rider  {
-	//Attributes:
+public class Rider {
+	// Attributes:
+	static Notifications notify=new Notifications();
 	Rider_Entity rider_entity;
 	Ride ride;
 	Driver dr;
 	private ArrayList<Driver> drivers = new ArrayList<Driver>();
-	 private ArrayList<Offer> offers = new ArrayList<Offer>();
-	//Methods:
-	public Rider()  {rider_entity= new Rider_Entity();}
-	  public void recieveOffer(Offer o){
-	        System.out.println("You got a new offer "+rider_entity.Username+"\n");
-	        offers.add(o);
-	    }
-	   
-	public void requestRide(String source , String destination) {
-		
-		source = ride.getSource();
-		destination = ride.getDestination();	
-		
+	private ArrayList<Offer> Recieved_offers = new ArrayList<Offer>();
+	 ArrayList<Offer> AllOffers = notify.getOffers();
+
+
+	// Methods:
+	public Rider() {
+		rider_entity = new Rider_Entity();
 	}
-	
+
+	public void recieveOffer(Offer o) {
+		System.out.println("You got a new offer " + rider_entity.Username + "\n");
+		Recieved_offers.add(o);
+	}
+
+//	ArrayList<Offer> AllOffers=notify.getOffer();
+//	AllOffers.forEach( O ->{
+//		if( O.getRide()==ride) {
+//			Recieved_offers.add(O);
+//		}
+//	
+//	}
+	public ArrayList<Offer> ListOffer(Ride ride) {
+		AllOffers.forEach(O -> {
+			if (O.getRide() == ride) {
+				Recieved_offers.add(O);
+			}
+		});
+		return Recieved_offers;
+	}
+
+	public void requestRide(Ride r,String source,String destination) {
+		r=new Ride();
+		r.setSource(source);
+		r.setDestination(destination);
+        notify.addRequested(r);
+	}
+
 	public void NotifyRequestRideObserver() {
 
 		for (Driver driver : drivers) {
@@ -30,22 +53,16 @@ public class Rider  {
 		}
 
 	}
-	/*   public void request(String src, String dst){
-    RideRequest.publishRequest(this, src, dst);
-}*/
+	
 
-public void selectOffer(Offer o){
+	public void selectOffer(Offer o) {
 
-}
-public void rateCompletedRide(){
-    
-}
+	}
+
+	public void rateCompletedRide() {
+
+	}
 
 }
 
 /////////////////////////////////////////////////////////////
-
-  
-
- 
-
