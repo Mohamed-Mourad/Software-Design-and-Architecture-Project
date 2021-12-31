@@ -7,7 +7,7 @@ public class Driver_Model {
 	ArrayList<Offer> myAcceptedOffers = new ArrayList<Offer>();
 
 	Driver_Model() {
-		// this.driverE = D;
+		
 	}
 
 	public void create() {

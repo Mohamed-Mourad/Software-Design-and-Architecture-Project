@@ -4,7 +4,7 @@ public class Ride {
 	// Attributes:
 	String source;
 	String destination;
-	Rider rider=new Rider();
+	Rider_Controller rider=new Rider_Controller();
 	Driver_Controller driver;
 	boolean status;
 	protected boolean completed=false;
@@ -87,7 +87,7 @@ public class Ride {
 	}
 
 	// to later add it to history
-	public Ride(String source, String destination, Rider rider, Driver_Controller driver) {
+	public Ride(String source, String destination, Rider_Controller rider, Driver_Controller driver) {
 
 	}
 

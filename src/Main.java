@@ -195,7 +195,7 @@ public class Main {
 		d.DriverAddFavArea("haram");
 		Notifications n = new Notifications();
 		System.out.println(d.DrivergetFavAreas());
-		Rider rider = new Rider();
+		Rider_Controller rider = new Rider_Controller();
 		Rider_Entity riderE = new Rider_Entity("mado", "phonenum", "pass", "email");
 
 		Ride ride = new Ride(riderE, "haram", "bola2");

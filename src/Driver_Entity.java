@@ -4,7 +4,7 @@ public class Driver_Entity extends App_User {
 	int NationalID;
 	String Driving_License;
 	double DriverBalance;
-	Rider rider;
+	Rider_Controller rider;
 	static int id = 1;
 	int Did;
 	Fav_Areas FavAreas = new Fav_Areas();
