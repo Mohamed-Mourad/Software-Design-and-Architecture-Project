@@ -5,8 +5,8 @@ public class Rider {
 	static Notifications notify=new Notifications();
 	Rider_Entity rider_entity;
 	Ride ride;
-	Driver dr;
-	private ArrayList<Driver> drivers = new ArrayList<Driver>();
+	Driver_Controller dr;
+	private ArrayList<Driver_Controller> drivers = new ArrayList<Driver_Controller>();
 	private ArrayList<Offer> Recieved_offers = new ArrayList<Offer>();
 	ArrayList<Offer> AllOffers = notify.getOffers();
 
@@ -44,8 +44,8 @@ public class Rider {
 
 	public void NotifyRequestRideObserver() {
 
-		for (Driver driver : drivers) {
-			if (driver.FavAreas.Sources.contains(ride.getSource())) {
+		for (Driver_Controller driver : drivers) {
+			if (driver.driverM.driverE.FavAreas.Sources.contains(ride.getSource())) {
 				driver.UpdateRequestRide();
 			}
 		}

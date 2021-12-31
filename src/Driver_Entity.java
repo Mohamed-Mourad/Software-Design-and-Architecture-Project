@@ -3,10 +3,11 @@ public class Driver_Entity extends App_User {
 	Boolean Approved;
 	int NationalID;
 	String Driving_License;
-	Float DriverBalance;
+	double DriverBalance;
 	Rider rider;
-	double balance;
-	static int id = 0;
+	static int id = 1;
+	int Did;
+	Fav_Areas FavAreas = new Fav_Areas();
 
 	// Methods:
 	public Driver_Entity() {
@@ -16,8 +17,8 @@ public class Driver_Entity extends App_User {
 		PhoneNumber = "";
 		Driving_License = "";
 		NationalID = 0;
-		balance = 0;
-		id++;
+		DriverBalance = 0;
+		this.Did = id++;
 	}
 
 	public Driver_Entity(String D_Username, String D_PhoneNumber, String D_Password, String D_email, int nationalId,
@@ -92,13 +93,15 @@ public class Driver_Entity extends App_User {
 	public String getDrivingLicence() {
 		return Driving_License;
 	}
-	/*public void setDriverBalance(float balance) {
+	public void setDriverBalance(double balance) {
 		this.DriverBalance=balance;
 	}
 
-	public float getDriverBalance() {
+	public double getDriverBalance() {
 		return DriverBalance;
 	}
-	*/
+	public int getDriverID() {
+		return this.id;
+	}
 
 }

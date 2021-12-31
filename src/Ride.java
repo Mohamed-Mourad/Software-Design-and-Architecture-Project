@@ -5,11 +5,11 @@ public class Ride {
 	String source;
 	String destination;
 	Rider rider=new Rider();
-	Driver driver;
+	Driver_Controller driver;
 	boolean status;
 	protected boolean completed=false;
 	double price;
-	static ArrayList<Driver> drivers = new ArrayList<Driver>();
+	static ArrayList<Driver_Controller> drivers = new ArrayList<Driver_Controller>();
 	static ArrayList<Ride> Requests = new ArrayList<Ride>();
 	Rider_Entity rider_entity;
 	static int rideID = 1;
@@ -33,11 +33,11 @@ public class Ride {
 		Requests.add(this);
 		this.id = rideID++;}
 	*/
-	public static void addDriver(Driver d) {
+	public static void addDriver(Driver_Controller d) {
 		drivers.add(d);
 	}
 
-	public static void removeDriver(Driver d) {
+	public static void removeDriver(Driver_Controller d) {
 		drivers.remove(d);
 	}
 
@@ -87,13 +87,13 @@ public class Ride {
 	}
 
 	// to later add it to history
-	public Ride(String source, String destination, Rider rider, Driver driver) {
+	public Ride(String source, String destination, Rider rider, Driver_Controller driver) {
 
 	}
 
-	public void addTobalance(Driver driver,double price) {
+	public void addTobalance(Driver_Controller driver,double price) {
 		
-		driver.setDriverBalance(price);
+		driver.driverM.driverE.setDriverBalance(price);
 	
 	}
 	public int getMyRate(Ride r) {
