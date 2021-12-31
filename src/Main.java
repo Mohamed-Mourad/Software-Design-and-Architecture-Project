@@ -283,10 +283,23 @@ public class Main {
 		
 		// n.addOffer(offer);
 		 System.out.println( rider.ListOffer(ride));
-		 System.out.println("----------------------");
+		 System.out.println("-----------------------------------");
 		 
 		 rider.RiderAcceptOffer(rider.ListOffer(ride).get(0));
 		 System.out.println(d.SeeOfferNotifications(n));
+		 
+		 System.out.println("-----------------------------------");
+		 d.EndRide(ride);
+		 ride.addTobalance(d, 40.5);
+		 System.out.println( d.getDriverBalance());
+		 d.addToRideHistory(ride);
+		 System.out.println(d.getRideHistory());
+		 
+		 System.out.println("-----------------------------------");
+		 rider.rateCompletedRide(ride,3);
+		 System.out.println(ride.getMyRate(ride));
+		 
+		 
 		 
 }
 }

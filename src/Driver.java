@@ -6,12 +6,12 @@ public class Driver {
 	Driver_Entity driver_entity;
 	Fav_Areas FavAreas = new Fav_Areas();
 	// Fav_Areas FavAreas;
-	Admin admin;
 	Offer offer = new Offer();
 	ArrayList<Ride> rideHistory = new ArrayList<Ride>();
 	ArrayList<Ride> availableRequests = new ArrayList<Ride>();
 	static int driverID = 1;
 	int id;
+	double DriverBalance;
 	// Methods:
 
 	public Driver() {
@@ -74,8 +74,21 @@ public class Driver {
 	}
 
 	public void EndRide(Ride r) {
+		r.completed=true;
+	}
+	public void setDriverBalance(double balance) {
+		this.DriverBalance=balance;
 	}
 
+	public double getDriverBalance() {
+		return DriverBalance;
+	}
+	public void addToRideHistory(Ride r) {
+		rideHistory.add(r);
+	}
+	public ArrayList<Ride> getRideHistory() {
+		return rideHistory;
+	}
 	public void AnnounceRide() {
 	}
 

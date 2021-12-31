@@ -7,12 +7,14 @@ public class Ride {
 	Rider rider=new Rider();
 	Driver driver;
 	boolean status;
+	protected boolean completed=false;
 	double price;
 	static ArrayList<Driver> drivers = new ArrayList<Driver>();
 	static ArrayList<Ride> Requests = new ArrayList<Ride>();
 	Rider_Entity rider_entity;
 	static int rideID = 1;
 	int id;
+	Rate rate= new Rate();
 
 	Ride() {
 
@@ -89,7 +91,12 @@ public class Ride {
 
 	}
 
-	public void end() {
-
+	public void addTobalance(Driver driver,double price) {
+		
+		driver.setDriverBalance(price);
+	
+	}
+	public int getMyRate(Ride r) {
+		return r.rate.getRate();
 	}
 }

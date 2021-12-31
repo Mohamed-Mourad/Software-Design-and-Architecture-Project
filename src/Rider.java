@@ -11,6 +11,7 @@ public class Rider {
 	ArrayList<Offer> AllOffers = notify.getOffers();
 
 
+
 	// Methods:
 	public Rider() {
 		rider_entity = new Rider_Entity();
@@ -52,12 +53,9 @@ public class Rider {
 	}
 	
 
-	public void selectOffer(Offer o) {
-
-	}
-
-	public void rateCompletedRide() {
-
+	public void rateCompletedRide(Ride ride,int rating) {
+		//rateRide=new Rate();
+          ride.rate.setRate(rating);
 	}
 
 }
