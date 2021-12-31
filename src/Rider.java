@@ -47,7 +47,7 @@ public class Rider {
 	public void NotifyRequestRideObserver() {
 
 		for (Driver driver : drivers) {
-			if (driver.FavAreas.contains(ride.getSource())) {
+			if (driver.FavAreas.Sources.contains(ride.getSource())) {
 				driver.UpdateRequestRide();
 			}
 		}
