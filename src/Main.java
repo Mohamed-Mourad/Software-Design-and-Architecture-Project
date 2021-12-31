@@ -276,12 +276,17 @@ public class Main {
 		 rider.requestRide(ride,"haram","bola2");
 		
 		
-		System.out.println(d.SeeNotifications(n));
+		System.out.println(d.SeeRequestNotifications(n));
 		// n.addRequested(ride);
 		
-		 d.Offer(d,ride,40.5);
+		d.Offer(d,ride,40.5);
+		
 		// n.addOffer(offer);
 		 System.out.println( rider.ListOffer(ride));
+		 System.out.println("----------------------");
+		 
+		 rider.RiderAcceptOffer(rider.ListOffer(ride).get(0));
+		 System.out.println(d.SeeOfferNotifications(n));
 		 
 }
 }

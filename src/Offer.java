@@ -1,5 +1,6 @@
 public class Offer {
 	
+	boolean Accepted;
 	private Driver driver;
 	private Ride ride;
 	private double Price;
@@ -26,7 +27,12 @@ public class Offer {
 	}
 	
 	public String toString() {
-		return (this.getDriver()+" | Offer price : " + this.getPrice()   );
+		return (this.getDriver()+" | Offer price : " + this.getPrice() + "| Status: " + this.Accepted);
 
+	}
+	
+	public void acceptOffer() {
+		Accepted = true;
+		noty.addAcceptedOffer(this);
 	}
 }

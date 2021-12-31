@@ -8,7 +8,7 @@ public class Rider {
 	Driver dr;
 	private ArrayList<Driver> drivers = new ArrayList<Driver>();
 	private ArrayList<Offer> Recieved_offers = new ArrayList<Offer>();
-	 ArrayList<Offer> AllOffers = notify.getOffers();
+	ArrayList<Offer> AllOffers = notify.getOffers();
 
 
 	// Methods:
@@ -21,13 +21,6 @@ public class Rider {
 		Recieved_offers.add(o);
 	}
 
-//	ArrayList<Offer> AllOffers=notify.getOffer();
-//	AllOffers.forEach( O ->{
-//		if( O.getRide()==ride) {
-//			Recieved_offers.add(O);
-//		}
-//	
-//	}
 	public ArrayList<Offer> ListOffer(Ride ride) {
 		AllOffers.forEach(O -> {
 			if (O.getRide() == ride) {
@@ -35,6 +28,10 @@ public class Rider {
 			}
 		});
 		return Recieved_offers;
+	}
+	
+	public void RiderAcceptOffer(Offer O) {
+		O.acceptOffer();
 	}
 
 	public void requestRide(Ride r,String source,String destination) {

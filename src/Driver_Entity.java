@@ -6,7 +6,8 @@ public class Driver_Entity extends App_User {
 	Float DriverBalanace;
 	Rider rider;
 	double balance;
-	static int id = 0;
+	static int Did = 1;
+	int id;
 
 	// Methods:
 	public Driver_Entity() {
@@ -17,7 +18,7 @@ public class Driver_Entity extends App_User {
 		Driving_License = "";
 		NationalID = 0;
 		balance = 0;
-		id++;
+		id = Did++;
 	}
 
 	public Driver_Entity(String D_Username, String D_PhoneNumber, String D_Password, String D_email, int nationalId,

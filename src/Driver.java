@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Driver {
 
 	// Attributes:
-	Notifications notify = new Notifications();
 	Driver_Entity driver_entity;
 	Fav_Areas FavAreas = new Fav_Areas();
 	// Fav_Areas FavAreas;
@@ -21,23 +20,27 @@ public class Driver {
 		this.id = driverID++;
 	}
 
-
-	public ArrayList<Ride> SeeNotifications(Notifications n) {
+	public ArrayList<Ride> SeeRequestNotifications(Notifications n) {
 		ArrayList<Ride> temp = n.getRequested();
 		ArrayList<Ride> rides_inFav = new ArrayList<Ride>();
 		temp.forEach(riderequest -> {
-			if(FavAreas.Sources.contains(riderequest.getSource())) {
+			if (FavAreas.Sources.contains(riderequest.getSource())) {
 				rides_inFav.add(riderequest);
 			}
 		});
 
 		return rides_inFav;
 	}
-
-	public void offerPrice(double price, Driver driver) {
-
-		// notifyme.addOffer();
-
+	
+	public ArrayList<Offer> SeeOfferNotifications(Notifications n) {
+		ArrayList<Offer> temp = n.getAcceptedOffers();
+		ArrayList<Offer> myAccepted = new ArrayList<Offer>();
+		temp.forEach(offer -> {
+			if (offer.getDriver().id == this.id) {
+				myAccepted.add(offer);
+			}
+		});
+		return myAccepted;
 	}
 
 	public void DriverAddFavArea(String Area) {

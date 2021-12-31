@@ -5,6 +5,7 @@ public class Notifications {
 //	ArrayList<Ride> announcedRides = new ArrayList<Ride>();
 	static ArrayList<Ride> RequestedRides = new ArrayList<Ride>();
 	static ArrayList<Offer> offers = new ArrayList<Offer>();
+	static ArrayList<Offer> AcceptedOffers = new ArrayList<Offer>();
 
 //	
 //	public void addAnnounced(Ride ride) {
@@ -18,7 +19,6 @@ public class Notifications {
 	}
 
 	public ArrayList<Ride> getRequested() {
-
 		return RequestedRides;
 	}
 
@@ -28,5 +28,13 @@ public class Notifications {
 
 	public ArrayList<Offer> getOffers() {
 		return offers;
+	}
+	
+	public void addAcceptedOffer(Offer offer) {
+		AcceptedOffers.add(offer);
+	}
+
+	public ArrayList<Offer> getAcceptedOffers() {
+		return AcceptedOffers;
 	}
 }
