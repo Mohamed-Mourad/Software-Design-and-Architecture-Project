@@ -196,9 +196,9 @@ public class Main {
 		Notifications n = new Notifications();
 		System.out.println(d.DrivergetFavAreas());
 		Rider_Controller rider = new Rider_Controller();
-		Rider_Entity riderE = new Rider_Entity("mado", "phonenum", "pass", "email");
+		Rider_Controller riderC = new Rider_Controller("mado", "phonenum", "pass", "email");
 
-		Ride ride = new Ride(riderE, "haram", "bola2");
+		Ride_Controller ride = new Ride_Controller(riderC, "haram", "bola2");
 
 		rider.requestRide(ride, "haram", "bola2");
 
@@ -223,7 +223,7 @@ public class Main {
 
 		System.out.println("-----------------------------------");
 		rider.rateCompletedRide(ride, 3);
-		System.out.println(ride.getMyRate(ride));
+		System.out.println(ride.rideM.rideE.getMyRate());
 
 	}
 }

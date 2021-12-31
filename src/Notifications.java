@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Notifications {
 
 //	ArrayList<Ride> announcedRides = new ArrayList<Ride>();
-	static ArrayList<Ride> RequestedRides = new ArrayList<Ride>();
+	static ArrayList<Ride_Controller> RequestedRides = new ArrayList<Ride_Controller>();
 	static ArrayList<Offer> offers = new ArrayList<Offer>();
 	static ArrayList<Offer> AcceptedOffers = new ArrayList<Offer>();
 
@@ -14,11 +14,11 @@ public class Notifications {
 //	public void remAnnounced(Ride ride) {
 //		announcedRides.remove(ride);
 //	}
-	public void addRequested(Ride ride) {
+	public void addRequested(Ride_Controller ride) {
 		RequestedRides.add(ride);
 	}
 
-	public ArrayList<Ride> getRequested() {
+	public ArrayList<Ride_Controller> getRequested() {
 		return RequestedRides;
 	}
 

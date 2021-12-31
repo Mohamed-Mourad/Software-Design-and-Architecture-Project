@@ -12,10 +12,10 @@ public class Driver_Controller {
 
 	}
 
-	public ArrayList<Ride> SeeRequestNotifications(Notifications n) {
-		ArrayList<Ride> temp = n.getRequested();
+	public ArrayList<Ride_Controller> SeeRequestNotifications(Notifications n) {
+		ArrayList<Ride_Controller> temp = n.getRequested();
 		temp.forEach(riderequest -> {
-			if (driverM.driverE.FavAreas.Sources.contains(riderequest.getSource())) {
+			if (driverM.driverE.FavAreas.Sources.contains(riderequest.rideM.rideE.getSource())) {
 				driverM.updateFavList(riderequest);
 			}
 		});
@@ -48,7 +48,7 @@ public class Driver_Controller {
 		System.out.println("You've got a ride in your favourite areas.");
 	}
 
-	public void Offer(Driver_Controller driver, Ride ride, double price) {
+	public void Offer(Driver_Controller driver, Ride_Controller ride, double price) {
 		offer = new Offer(this, ride, price);
 		System.out.println(ride);
 	}
@@ -58,15 +58,15 @@ public class Driver_Controller {
 
 	}
 
-	public void EndRide(Ride r) {
-		r.completed = true;
+	public void EndRide(Ride_Controller r) {
+		r.rideM.rideE.completed = true;
 	}
 
-	public void addToRideHistory(Ride r) {
+	public void addToRideHistory(Ride_Controller r) {
 		driverM.updateRideHistory(r);
 	}
 
-	public ArrayList<Ride> getRideHistory() {
+	public ArrayList<Ride_Controller> getRideHistory() {
 		return driverM.readHistory();
 	}
 
